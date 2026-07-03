@@ -8,7 +8,7 @@
 
 A high-performance landing page template built with **Astro** and **Tailwind CSS**. Zero JavaScript shipped by default, perfect scores on Lighthouse.
 
-<a href="https://landing-page-template.pages.dev/" target="_blank">
+<a href="https://landing-page-template-4yf.pages.dev/" target="_blank">
   <img src="https://img.shields.io/badge/View_Live_Site-FF8231?style=for-the-badge&logo=cloudflare&logoColor=white" alt="Live Site">
 </a>
 
