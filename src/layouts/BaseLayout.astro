@@ -10,7 +10,15 @@ interface Props {
 
 const { title, description, image = "/landing-page-template.png" } = Astro.props;
 
+const canonicalURL = Astro.site;
 const canonicalImageURL = new URL(image, Astro.site);
+const ldJson = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: title || "Promote Company",
+  url: canonicalURL,
+  description: description || "Web solutions for your business",
+});
 ---
 
 <html lang="en" class="min-h-dvh">
@@ -29,23 +37,37 @@ const canonicalImageURL = new URL(image, Astro.site);
       crossorigin="anonymous"
     />
 
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Landing Page Template" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta name="robots" content="index, follow" />
+    <meta name="google-site-verification" content="V4L9jO4kCtoQ0PFpAXU8Qk6mFOEwcZRwwNfRWF_rnII" />
 
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://landing-page-template-4yf.pages.dev/" />
+    <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={canonicalImageURL} />
 
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://landing-page-template-4yf.pages.dev/" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={canonicalImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <link rel="canonical" href={canonicalURL} />
 
     <title>{title}</title>
+
+    <script type="application/ld+json" set:html={ldJson}></script>
 
     <style is:global>
       html,
