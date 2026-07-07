@@ -1,9 +1,7 @@
 ---
 import "../styles/global.css";
 
-import Twitter from "../components/icons/twitter.astro";
-import Linkedin from "../components/icons/linkedin.astro";
-import Instagram from "../components/icons/instagram.astro";
+import Icons from "../components/Icons.astro";
 interface Props {
   title: string;
   description: string;
@@ -96,14 +94,14 @@ const canonicalImageURL = new URL(image, Astro.site);
         <span class="text-xl font-black text-slate-800 md:text-2xl"> Follow Us </span>
 
         <div class="flex w-full items-center justify-center gap-6 p-2 md:justify-start">
-          <a href="#" aria-label="Link Twitter" class="text-black transition-transform hover:scale-110 hover:text-sky-500">
-            <Twitter class="h-8 w-8 md:h-10 md:w-10" />
+          <a href="#" aria-label="Twitter" class="text-black transition-colors hover:text-sky-500">
+            <Icons name="twitter" class="h-8 w-8 md:h-10 md:w-10" />
           </a>
-          <a href="#" aria-label="Link Linkedin" class="text-black transition-transform hover:scale-110 hover:text-blue-800">
-            <Linkedin class="h-8 w-8 md:h-10 md:w-10" />
+          <a href="#" aria-label="LinkedIn" class="text-black transition-colors hover:text-blue-800">
+            <Icons name="linkedin" class="h-8 w-8 md:h-10 md:w-10" />
           </a>
-          <a href="#" aria-label="Link Instagram" class="text-black transition-transform hover:scale-110 hover:text-pink-600">
-            <Instagram class="h-8 w-8 md:h-10 md:w-10" />
+          <a href="#" aria-label="Instagram" class="text-black transition-colors hover:text-pink-600">
+            <Icons name="instagram" class="h-8 w-8 md:h-10 md:w-10" />
           </a>
         </div>
       </div>
